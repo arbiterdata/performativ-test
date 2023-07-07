@@ -10,6 +10,6 @@
     <div id="root"></div>
 
     <!-- Include the React app bundle -->
-    <script src="{{ asset('static/js/main.b172fc64.js') }}"></script>
+    <script src="{{ asset('static/js/main.d185ea05.js') }}"></script>
   </body>
 </html>

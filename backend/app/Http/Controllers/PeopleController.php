@@ -65,9 +65,25 @@ class PeopleController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, User $user)
+    public function update(Request $request, $id)
     {
-        //
+        // Validate the request data
+        $validatedData = $request->validate([
+            'first_name' => 'required',
+            'last_name' => 'required',
+        ]);
+    
+        // Check if the person exists
+        $person = Person::findOrFail($id);
+    
+        // Update the person's details
+        $person->update([
+            'first_name' => $validatedData['first_name'],
+            'last_name' => $validatedData['last_name'],
+        ]);
+    
+        // Return the updated person as a JSON response
+        return response()->json($person, 200);
     }
 
     /**

@@ -22,6 +22,7 @@ use App\Http\Controllers\PeopleController;
 Route::get('/people', 'App\Http\Controllers\PeopleController@index')->name('people.index');
 Route::post('/people', [PeopleController::class, 'store'])->name('people.store');
 Route::delete('/people/{id}', 'App\Http\Controllers\PeopleController@destroy')->name('people.destroy');
+Route::put('/people/{id}', 'App\Http\Controllers\PeopleController@update')->name('people.update');
 
 
 // Route::resource('people', 'PeopleController');
